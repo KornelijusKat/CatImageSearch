@@ -1,8 +1,2 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+App using the Cat api,
+1. A select element exists at the start with cat breeded filled in from the api, after selecting an option from it, it fill up the a container with cats. And also a refresh button appears that fetches the same cat breed again, the api limit is 10 and there can be more than 10 cats in the api database. 

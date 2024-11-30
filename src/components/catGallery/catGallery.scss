@@ -1,7 +1,23 @@
 .cat-gallery{
-    overflow-y: scroll;
-    height:850px;
+    //overflow-y: scroll;
+    overflow-y: auto; 
+    scrollbar-color: #555 #333; 
+    height:750px;
+    .card {
+        padding: 2em;
+        background-color: #28282828;
+      }
     .img-con{
-        width:800px;
+        height:750px;
+        .img-fluid{
+            object-fit: cover;
+            max-height: 100%;
+        }
+    }
+}
+@media (max-width: 560px) {
+    .cat-gallery {
+        overflow-y: visible;
+        height: auto; 
     }
 }

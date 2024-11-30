@@ -12,6 +12,7 @@ function App() {
     const [loading, setLoading] = useState(true);
     const [cats, setCats] = useState([]);
     const [selectBreed, setSelectBreed] = useState('');
+    const [refreshKey, setRefreshKey] = useState(0);
 
     useEffect(() => {
         const fetchBreeds = async () =>{       
@@ -42,9 +43,13 @@ function App() {
         }
       };
       fetchCatImages();
-    },[selectBreed]);
+    },[selectBreed, refreshKey]);
     const handleBreedSelect = (breedId) => {
       setSelectBreed(breedId); 
+    };
+    
+    const handleRefreshClick = () => {
+      setRefreshKey(prevKey => prevKey + 1); 
     };
     if (loading) {
         return (
@@ -55,14 +60,25 @@ function App() {
       }
       console.log("Rendering breeds:", breeds);
     return(
-      <section>
-        <BreedSelector breeds = {breeds} onSelectedBreed={handleBreedSelect} selectBreed={selectBreed}></BreedSelector>
-        {selectBreed && cats.length > 0 ? (
-          <CatGallery cats = {cats}></CatGallery>
-        ) :(
-          <p>Please select a breed</p>
-        )}
-      </section>
+      <>
+        <header>
+          <h1> Find your favourite cat breeds</h1>
+        </header>
+        <main>
+          <section>
+            <BreedSelector breeds = {breeds} onSelectedBreed={handleBreedSelect} selectBreed={selectBreed}></BreedSelector>
+              {selectBreed && cats.length > 0 ? (
+                <>
+                  <button className="btn btn-dark mt-2 mb-2" onClick={() => handleRefreshClick(selectBreed)}>Refresh</button>
+                  <CatGallery cats = {cats}/>
+                
+                </>
+              ) :(
+                <p>Please select a breed</p>
+              )}
+          </section>
+        </main>
+      </>
     )
 }
 export default App
