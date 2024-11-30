@@ -1,2 +1,0 @@
-App using the Cat api,
-1. A select element exists at the start with cat breeded filled in from the api, after selecting an option from it, it fill up the a container with cats. And also a refresh button appears that fetches the same cat breed again, the api limit is 10 and there can be more than 10 cats in the api database. Hi.
