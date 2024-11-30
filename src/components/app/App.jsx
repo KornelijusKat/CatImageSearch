@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import GetBreeds from '../API/GetBreads'
-import BreedSelector from '../breedSelector/BreedSelector'
+
+import BreedSelector from '../BreedSelector/BreedSelector'
 import './App.css'
 import ajaxService from '../API/ajaxService'
-import CatGallery from '../catGallery/CatGallery'
+import CatGallery from '../CatGallery/CatGallery'
 import Loading from '../loading/Loading'
 import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
